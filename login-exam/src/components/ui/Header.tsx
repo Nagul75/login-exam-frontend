@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "./button";
-import { Bird } from "lucide-react";
+import { Bird, CircleUserRound } from "lucide-react";
 
 type HeaderProps = {
     title: string,
@@ -18,6 +18,10 @@ const Header = ({title, loggedIn}: HeaderProps) => {
                 </div>
                 {loggedIn ?
                 <>
+                    <div className="flex">
+                        <Link to="/logout"><Button variant="outline" className="mr-6 bg-stone-900">Logout</Button></Link>
+                        <CircleUserRound size={32}></CircleUserRound>
+                    </div>
                 </> :
                 <>
                     <div>
