@@ -2,9 +2,11 @@ import { Button} from "./button";
 import { Input } from "./input";
 import { Card } from "./card";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 
 const RegistrationForm = () => {
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
@@ -20,7 +22,10 @@ const RegistrationForm = () => {
     const handleSubmit = (e:any) => {
         e.preventDefault();
         axios.post("http://127.0.0.1:8000/signup/", formData)
-        .then((res) => {console.log(res.data)})
+        .then((res) => {
+          console.log(res.data)
+          navigate("/login")
+        })
         .catch((err) => {console.log(err)})
     }
 
