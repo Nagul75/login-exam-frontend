@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Avatar, AvatarFallback } from "./ui/avatar";
+import { useNavigate } from "react-router-dom";
 import { Card } from "./ui/card";
 import axios from "axios";
 import Header from "./ui/Header";
@@ -18,21 +19,21 @@ interface UserData {
 const Profile = () => {
   const [userData, setUserData] = useState<UserData | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+
+  const navigate = useNavigate()
 
   useEffect(() => {
-    axios
+      axios
       .get("http://127.0.0.1:8000/check-auth/", { withCredentials: true })
       .then((res) => {
         if (res.data.authenticated) {
           setUserData(res.data.user);
         } else {
-          setError("You are not authenticated.");
+          navigate('/login')
         }
       })
       .catch((error) => {
         console.error("Error fetching user data:", error);
-        setError("Failed to fetch user data. Please try again.");
       })
       .finally(() => {
         setLoading(false);
@@ -41,10 +42,6 @@ const Profile = () => {
 
   if (loading) {
     return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>{error}</div>;
   }
 
   if (!userData) {

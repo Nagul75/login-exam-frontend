@@ -9,11 +9,10 @@ type HeaderProps = {
     loggedIn: boolean,
 }
 
-
 const Header = ({title, loggedIn}: HeaderProps) => {
     const navigate = useNavigate()
     function logout() {
-        axios.get("http://127.0.0.1:8000/logout/")
+        axios.post("http://127.0.0.1:8000/logout/", {}, {withCredentials: true})
           .then((res) => {
             console.log(res)
             navigate("/login")
