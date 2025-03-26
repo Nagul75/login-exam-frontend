@@ -89,7 +89,7 @@ const LoginForm = () => {
               <p className="inline text-sm">Don't have an account?</p>
               <Button
                 variant="link"
-                className="text-white text-sm"
+                className="text-blue-600 text-sm"
                 onClick={goto}
               >
                 Sign-up
