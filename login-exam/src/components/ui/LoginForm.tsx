@@ -2,8 +2,11 @@ import { Button} from "./button";
 import { Input } from "./input";
 import { Card } from "./card";
 import { useState } from "react";
+import axios from 'axios'
+import { useNavigate } from "react-router-dom"
 
 const LoginForm = () => {
+    const navigate=  useNavigate()
     const [formData, setFormData] = useState({
         username: '',
         password: '',
@@ -16,7 +19,16 @@ const LoginForm = () => {
 
     const handleSubmit = (e:any) => {
         e.preventDefault();
-        console.log('Form submitted', formData)
+        axios.post("http://127.0.0.1:8000/login/", formData, {withCredentials: true})
+          .then((res) => {
+            console.log(res.data)
+            navigate('/')
+          })
+          .catch((err) => {console.log(err)})
+    }
+
+    function goto() {
+      navigate("/signup")
     }
 
     return(
@@ -57,6 +69,9 @@ const LoginForm = () => {
             <Button type="submit" className="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
               Register
             </Button>
+          </div>
+          <div className="mt-4 text-left text-white text-sm">
+            <p className="inline text-sm">Don't have an account?</p><Button variant="link" className="text-white text-sm" onClick={goto}>Sign-up</Button> 
           </div>
         </form>
       </Card>

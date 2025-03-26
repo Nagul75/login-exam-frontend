@@ -2,6 +2,7 @@ import { Button} from "./button";
 import { Input } from "./input";
 import { Card } from "./card";
 import { useState } from "react";
+import axios from 'axios'
 
 const RegistrationForm = () => {
     const [formData, setFormData] = useState({
@@ -18,7 +19,9 @@ const RegistrationForm = () => {
 
     const handleSubmit = (e:any) => {
         e.preventDefault();
-        console.log('Form submitted', formData)
+        axios.post("http://127.0.0.1:8000/signup/", formData)
+        .then((res) => {console.log(res.data)})
+        .catch((err) => {console.log(err)})
     }
 
     return(

@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
 import { Button } from "./button";
 import { Bird, CircleUserRound } from "lucide-react";
+import axios from 'axios'
 
 type HeaderProps = {
     title: string,
     loggedIn: boolean,
+}
+
+function logout() {
+    axios.get("http://127.0.0.1:8000/logout/")
+      .then((res) => {console.log(res)})
+      .catch((err) => {console.log(err)})
 }
 
 const Header = ({title, loggedIn}: HeaderProps) => {
@@ -19,7 +26,7 @@ const Header = ({title, loggedIn}: HeaderProps) => {
                 {loggedIn ?
                 <>
                     <div className="flex">
-                        <Link to="/logout"><Button variant="outline" className="mr-6 bg-stone-900">Logout</Button></Link>
+                        <Button variant="outline" className="mr-6 bg-stone-900" onClick={logout}>Logout</Button>
                         <CircleUserRound size={32}></CircleUserRound>
                     </div>
                 </> :
