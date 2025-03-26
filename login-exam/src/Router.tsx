@@ -1,6 +1,7 @@
 import Home from "./App"
 import Signup from "./components/Signup"
 import Login from "./components/Login"
+import Profile from "./components/Profile"
 import Settings from "./components/Settings"
 
 const router = [
@@ -19,6 +20,10 @@ const router = [
     {
         path: '/settings',
         element: <Settings/>
+    },
+    {
+        path: '/profile',
+        element: <Profile/>
     }
 ]
 

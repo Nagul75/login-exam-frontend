@@ -27,7 +27,7 @@ const Header = ({title, loggedIn}: HeaderProps) => {
                 <>
                     <div className="flex">
                         <Button variant="outline" className="mr-6 bg-stone-900" onClick={logout}>Logout</Button>
-                        <CircleUserRound size={32}></CircleUserRound>
+                        <Link to="/profile"><CircleUserRound size={32}></CircleUserRound></Link>
                     </div>
                 </> :
                 <>
