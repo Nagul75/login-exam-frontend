@@ -23,7 +23,7 @@ const Header = ({title, loggedIn}: HeaderProps) => {
         <div className="flex col align-middle justify-center">
         <header className="text-stone-100 p-4 w-[95%] border-b-2 border-b-stone-800 fixed top-0 left-8 right-0 z-50 bg-stone-900">
             <div className="flex justify-between items-center">
-                <div><Bird size={48}/></div>
+                <div><Link to="/"><Bird size={48}/></Link></div>
                 <div>
                     <h1 className="scroll-m-20 text-4xl font-bold tracking-wide" style={{fontFamily: "Open Sans"}}>{title}</h1>
                 </div>
