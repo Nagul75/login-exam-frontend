@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "./button";
 import { Bird, CircleUserRound } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 
 type HeaderProps = {
@@ -8,13 +9,17 @@ type HeaderProps = {
     loggedIn: boolean,
 }
 
-function logout() {
-    axios.get("http://127.0.0.1:8000/logout/")
-      .then((res) => {console.log(res)})
-      .catch((err) => {console.log(err)})
-}
 
 const Header = ({title, loggedIn}: HeaderProps) => {
+    const navigate = useNavigate()
+    function logout() {
+        axios.get("http://127.0.0.1:8000/logout/")
+          .then((res) => {
+            console.log(res)
+            navigate("/login")
+        })
+          .catch((err) => {console.log(err)})
+    }
     return (
         <div className="flex col align-middle justify-center">
         <header className="text-stone-100 p-4 w-[95%] border-b-2 border-b-stone-800">
