@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Avatar, AvatarFallback } from "./ui/avatar";
 import { Card } from "./ui/card";
 import axios from "axios";
 import Header from "./ui/Header";
