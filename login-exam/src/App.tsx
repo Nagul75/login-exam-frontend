@@ -28,7 +28,7 @@ function Home() {
       <Header title="Generic Website" loggedIn={loggedIn}></Header>
       <div className="flex-1 flex mt-5 overflow-hidden">
         <Sidebar></Sidebar>
-        <main className="flex-1 p-4 ml-4">
+        <main className="flex-1 p-4 ml-40 mt-18">
           <h1 className="text-white">Hello this is the main content</h1>
         </main>
       </div>

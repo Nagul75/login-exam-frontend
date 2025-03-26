@@ -57,8 +57,8 @@ const Profile = () => {
         <Header title="Generic Website" loggedIn={true}></Header>
         <div className="flex-1 flex mt-5 overflow-hidden">
           <Sidebar></Sidebar>
-          <main className="flex-1 p-4 ml-64">
-            <Card className="p-6 shadow-lg rounded-lg bg-stone-900 text-white flex flex-col gap-1 w-2xl border-stone-700">
+          <main className="flex-1 p-4 ml-90 mt-18">
+            <Card className="p-6 shadow-lg rounded-lg bg-stone-900 text-white flex flex-col gap-1 w-2xl border-stone-800">
               <h2 className="text-3xl font-bold mb-4 text-center">Profile</h2>
               <div className="flex flex-row justify-start gap-4 mb-4">
                 <Avatar className="w-14 h-14">

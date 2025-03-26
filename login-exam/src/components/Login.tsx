@@ -9,7 +9,7 @@ function Home() {
       <Header title="Generic Website" loggedIn={false}></Header>
       <div className="flex-1 flex mt-5 overflow-hidden">
         <Sidebar></Sidebar>
-        <main className="flex-1 p-4 ml-68">
+        <main className="flex-1 p-4 ml-100 mt-18">
           <LoginForm></LoginForm>
         </main>
       </div>
