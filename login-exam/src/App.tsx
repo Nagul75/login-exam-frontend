@@ -45,7 +45,7 @@ function Home() {
       <div className="flex-1 flex mt-5 overflow-hidden">
         <Sidebar></Sidebar>
         <main className="flex-1 p-4 ml-40 mt-18">
-          <h1 className="text-white"><span className="font-bold">This is just dummy data sent from the server.</span> The data was obtained from poke-api and was used to populate the table in the database.</h1>
+          <h1 className="text-white">This is just <strong className="text-fuchsia-700">dummy data sent from the server.</strong> The data was obtained from poke-api and was used to populate the table in the database.</h1>
           <h1 className="text-white mb-4">This is just for demonstration purposes and the data can be anything.</h1>
           <ul className="flex flex-wrap gap-4">
             {pokemonData.map((pokemon, index) => (
