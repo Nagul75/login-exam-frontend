@@ -29,6 +29,10 @@ const RegistrationForm = () => {
         .catch((err) => {console.log(err)})
     }
 
+    function goto() {
+      navigate("/login");
+    }
+
     return(
         <>
             <div className="max-w-lg p-6">
@@ -87,6 +91,7 @@ const RegistrationForm = () => {
               onChange={handleChange}
               className="mt-2 p-2 w-full border rounded-lg"
               placeholder="Enter your password"
+              required
             />
           </div>
 
@@ -94,6 +99,18 @@ const RegistrationForm = () => {
             <Button type="submit" className="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
               Register
             </Button>
+          </div>
+
+          <div className="mt-4 text-left text-white text-sm">
+              <p className="inline text-sm">Already have an account?</p>
+              <Button
+                type="button"
+                variant="link"
+                className="text-blue-600 text-sm"
+                onClick={goto}
+              >
+                Login
+              </Button>
           </div>
         </form>
       </Card>

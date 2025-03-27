@@ -56,6 +56,7 @@ const LoginForm = () => {
                 onChange={handleChange}
                 className="mt-2 p-2 w-full border rounded-lg text-white"
                 placeholder="Enter your username"
+                required
               />
             </div>
 
@@ -74,6 +75,7 @@ const LoginForm = () => {
                 onChange={handleChange}
                 className="mt-2 p-2 w-full border rounded-lg"
                 placeholder="Enter your password"
+                required
               />
             </div>
 
@@ -88,6 +90,7 @@ const LoginForm = () => {
             <div className="mt-4 text-left text-white text-sm">
               <p className="inline text-sm">Don't have an account?</p>
               <Button
+                type="button"
                 variant="link"
                 className="text-blue-600 text-sm"
                 onClick={goto}
