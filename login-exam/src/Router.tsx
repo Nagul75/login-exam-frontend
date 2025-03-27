@@ -3,6 +3,7 @@ import Signup from "./components/Signup"
 import Login from "./components/Login"
 import Profile from "./components/Profile"
 import Settings from "./components/Settings"
+import Error from "./components/404Error"
 
 const router = [
     {
@@ -24,6 +25,10 @@ const router = [
     {
         path: '/profile',
         element: <Profile/>
+    },
+    {
+        path: '*',
+        element: <Error/>
     }
 ]
 
