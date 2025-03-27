@@ -32,7 +32,7 @@ const Pokemon = () => {
   return (
     <>
       <div className="flex flex-col">
-        <Header title="Generic Website" loggedIn={false}></Header>
+        <Header title="Generic Website" loggedIn={true}></Header>
         <div className="flex-1 flex mt-5 overflow-hidden">
           <Sidebar></Sidebar>
           <main className="flex-1 p-4 mt-18">
