@@ -52,7 +52,7 @@ function Home() {
                 <Card key={index} className="h-40 bg-stone-900 border-stone-700 mb-4 w-100">
                   <div className="flex gap-4 justify-start">
                     {pokemon.image_url ? (
-                      <img className="h-32 w-32 ml-10" src={pokemon.image_url}
+                      <img className="h-32 w-32 ml-10 text-white" src={pokemon.image_url}
                       alt={pokemon.name}
                       />
                     ) : (<p>No Image available</p>)}
