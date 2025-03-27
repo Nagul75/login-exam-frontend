@@ -13,5 +13,7 @@ The various paths available:
 3. /signup - signup page
 4. /profile - profile page (protected route) [^1]
 5. /settings - settings page
+6. /pokemon/:id - displays specific pokemon clicked
+7. 404 error page for all other urls
 
 [^1]: Protected route requires a user to be logged before entering.
