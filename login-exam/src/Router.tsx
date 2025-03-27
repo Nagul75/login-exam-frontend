@@ -4,6 +4,7 @@ import Login from "./components/Login"
 import Profile from "./components/Profile"
 import Settings from "./components/Settings"
 import Error from "./components/404Error"
+import Pokemon from "./components/Pokemon"
 
 const router = [
     {
@@ -25,6 +26,10 @@ const router = [
     {
         path: '/profile',
         element: <Profile/>
+    },
+    {
+        path: '/pokemon/:id',
+        element: <Pokemon/>
     },
     {
         path: '*',
