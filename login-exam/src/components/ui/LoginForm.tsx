@@ -12,6 +12,8 @@ const LoginForm = () => {
     password: "",
   });
 
+  const [error, setError] = useState<string | null>(null)
+
   const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -26,7 +28,7 @@ const LoginForm = () => {
         navigate("/");
       })
       .catch((err) => {
-        console.log(err);
+        setError(err.response?.data?.error || 'An error occurred')
       });
   };
 
@@ -88,6 +90,7 @@ const LoginForm = () => {
               </Button>
             </div>
             <div className="mt-4 text-left text-white text-sm">
+              {error && <p className="text-red-500">{error}</p>}
               <p className="inline text-sm">Don't have an account?</p>
               <Button
                 type="button"
