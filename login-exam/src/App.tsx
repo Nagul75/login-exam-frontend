@@ -79,14 +79,12 @@ function Home() {
                     ) : (
                       <p>No Image available</p>
                     )}
-                    <div className="flex flex-col gap-1">
+                    <div className="flex flex-col gap-1 justify-center items-center">
                       <h1 className="font-bold text-2xl text-fuchsia-700">
                         {pokemon.name.charAt(0).toUpperCase() +
                           pokemon.name.slice(1)}
                       </h1>
                       <p className="text-white">Poke-API ID: {pokemon.id}</p>
-                      <p className="text-white">Height: {pokemon.height}</p>
-                      <p className="text-white">Weight: {pokemon.weight}</p>
                     </div>
                   </div>
                 </Card>
